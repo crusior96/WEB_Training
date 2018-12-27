@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>visibility 프로퍼티</title>
+	<style>
+	span{
+		visibility : hidden;
+		color: blue;
+	}/*span으로 태그된 부분들의 속성을 미리 정해놓는다.*/ 
+	</style>
+	<script>
+		function change(){
+			var spanarray = document.getElementsByTagName("span");
+			for(var i = 0;i<spanarray.length;i++)
+			{
+				var span = spanarray[i];
+				var style = window.getComputedStyle(span);//CSS스타일의 객체는 getComputedStyle을 통해 프로퍼티를 얻어낸다.
+				var value = style.getPropertyValue("visibility");//그렇게 얻어낸 style 내에서 visibility항목값을 value에 저장한다.
+				if(value == "hidden")//value값에 hidden이 저장되어있으면 visible, 그 반대이면 반대의 행위를 한다.
+				{
+					span.style.visibility="visible";
+				}
+				else if(value == "visible")
+				{
+					span.style.visibility="hidden";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>다음 빈 곳에 숨은 단어? <button onclick = "change()">show/hide<!--이 버튼을 누르면 change()함수 실행--></button>
+	</h3>
+	<hr> 
+	<ul><!--span으로 둘러싸여져 있는 부분은 클릭이벤트 발생시 change()함수의 영향을 받아 속성이 바뀐다.-->
+		<li>I (<span>love</span>) you.
+		<li>CSS is Cascading (<span>Style</span>) Sheet.
+		<li>응답하라 (<span>1998</span>)
+	</ul>
+</body>
+</html>
