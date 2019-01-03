@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<!-- <p>태그로 출력된 텍스트를 마우스로 클릭 시, 출력된 prompt()창에 HTML텍스트를 입력하여 <p>태그의 내용을 바꾸어라.-->
+<html>
+<head>
+	<title>innerHTML 응용</title>
+	<script>
+		function change(){
+			var p = document.getElementById("sea"); //id가 sea인 DOM객체를 p에 리턴한다.
+			p.innerHTML = prompt("HTML 텍스트 혹은 그냥 텍스트를 입력하세요",""); //p의 innerHTML에 텍스트를 입력하여 출력해준다.
+		}
+	</script>
+</head>
+<body>
+	<h3>innerHTML</h3>
+	<hr>
+	<p id = "sea" onclick = "change()">이번 여름에는 어디로 여행을 갈까요?</p> <!--p 태그에 id는 sea로 지정, 클릭시 이벤트를 발생시키게 해두었다.-->
+</body>
+</html>
