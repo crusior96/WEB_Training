@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--기존에 생성된 리스트에 동적 방법으로 추가적으로 자료를 넣어보는 연습-->
+<html>
+<head>
+	<title>라면을 끓이는 순서</title>
+	<script>
+		//리스트 부분을 클릭시에 실행되는 함수 addon()
+		//ol리스트 내에 넣을 li객체를 생성, prompt()를 통해 텍스트값을 입력받는다.
+		//ol리스트 내에 appendChild를 통해 생성된 li객체를 입력해넣는다.
+		function addon(){
+			var plusli = document.createElement('li');
+			plusli.innerHTML = prompt("라면을 끓이는 순서를 입력하라","");
+			document.getElementById("lis_t").appendChild(plusli);
+		}
+	</script>
+</head>
+<body>
+	<h3>라면을 끓이는 순서</h3>
+	<hr>
+	<ol type="A" id="lis_t" style = "background-color:yellowgreen" onclick = "addon()">
+		<li>물을 끓인다</li>
+	</ol>
+</body>
+</html>
